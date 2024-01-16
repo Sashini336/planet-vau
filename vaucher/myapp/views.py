@@ -3,10 +3,6 @@ from django.shortcuts import render
 
 
 def home(request):
-    return render(request, 'myapp/base.html')
-
-
-def my_view(request):
     context = {
         "hotel": "100 Rizes Seaside Resort",
         "address_hotel": "23200 Gytheio, Gytheio, Greece",
@@ -30,5 +26,4 @@ def my_view(request):
         'city_tax': 'BGN 0.8',
         'total': 'EUR 26'
     }
-
     return render(request, 'myapp/base.html', context)
