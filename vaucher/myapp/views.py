@@ -4,7 +4,7 @@ from django.shortcuts import render
 
 def get_hotel_rating():
 
-    return 4
+    return 4.5
 
 
 def home(request):
@@ -33,6 +33,6 @@ def home(request):
         'tax': '',
         'city_tax': 'BGN 0.8',
         'total': 'EUR 26',
-        "star_range": range(hotel_rating)
+        "star_range": range((int(hotel_rating)))
     }
     return render(request, 'myapp/base.html', context)
