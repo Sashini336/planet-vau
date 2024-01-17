@@ -11,14 +11,22 @@ body {
   }
   
   @font-face {
-    font-family: Montserrat, sans-serif;
-    font-style: normal;
-    font-weight: 500, 600, 700;
-    src: url(https://fonts.gstatic.com/s/montserrat/v14/JTURjIg1_i6t8kCHKm45_ZpC3g3D_u50.woff2)
-      format("woff2");
+    font-family: 'Montserrat';
+    font-weight: 500;
+    src: url(https://fonts.gstatic.com/s/montserrat/v14/JTURjIg1_i6t8kCHKm45_ZpC3g3D_u50.woff2) 
+    format('woff2');
     unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
-  }
-  
+}
+
+/* @font-face {
+  font-family: 'Montserrat';
+  font-weight: 700;
+  src: url(https://fonts.gstatic.com/s/montserrat/v14/JTURjIg1_i6t8kCHKm45_ZpC3g3D_u50.woff2) 
+  format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+} */
+
+
   .container {
     max-width: 1400px;
   }
@@ -37,7 +45,6 @@ body {
   
   .title {
     font-size: 25px;
-    font-weight: 600;
   }
   
   .offer-container {
@@ -66,7 +73,6 @@ body {
     gap: 30px;
     background-color: #0a1b6b;
     color: #fff;
-    font-weight: 500;
     padding: 15px 0;
   }
   
@@ -84,7 +90,6 @@ body {
   }
   
   .type-room {
-    font-weight: 700;
   }
   
   .amount-people-container {
@@ -93,12 +98,10 @@ body {
   
   .price-includes {
     margin-bottom: 10px;
-    font-weight: 500;
     font-size: 15px;
   }
   
   .price-includes-text {
-    font-weight: 500;
   }
   
   .cancellation {
@@ -117,26 +120,22 @@ body {
   .amount-ppl {
     margin: 3px 0px 0px;
     line-height: 1.85714;
-    font-weight: 400;
     font-size: 13px;
   }
   
   .net-price {
-    font-weight: 600;
     line-height: 1.5;
     font-size: 18px;
   }
   
   h6.tax {
     margin: 12px 0px 0px;
-    font-weight: 600;
     line-height: 1.85714;
     font-size: 13px;
   }
   
   h6.tax-price {
     margin: 0px;
-    font-weight: 600;
     line-height: 1.85714;
     font-size: 15px;
   }
@@ -159,7 +158,6 @@ body {
     flex-direction: column;
     margin: 0;
     cursor: pointer;
-    font-weight: 600;
     font-size: 25px;
   }
   
@@ -259,7 +257,6 @@ body {
     color: #fff;
     background-color: #0a1b6b;
     border-radius: 4px;
-    font-weight: 500;
     font-size: 14px;
     width: 150px;
     height: 60px;
