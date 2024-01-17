@@ -20,12 +20,10 @@
           <div class="info-hotel">
             <h2 class="title">{{  hotel  }}
               <div class="star-rating">
-                <span class="star"></span>
-                <span class="star"></span>
-                <span class="star"></span>
-                <span class="star"></span>
-                <span class="star"></span>
-              </div>
+                {% for _ in star_range %}
+                    <span class="star"></span>
+                {% endfor %}
+            </div>                                          
             </h2>
             <div class="location">
               <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="location-icon" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32">

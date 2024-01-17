@@ -2,7 +2,15 @@
 from django.shortcuts import render
 
 
+def get_hotel_rating():
+
+    return 4
+
+
 def home(request):
+
+    hotel_rating = get_hotel_rating()
+
     context = {
         "hotel": "100 Rizes Seaside Resort",
         "address_hotel": "23200 Gytheio, Gytheio, Greece",
@@ -24,6 +32,7 @@ def home(request):
         'net_price': 'EUR 26',
         'tax': '',
         'city_tax': 'BGN 0.8',
-        'total': 'EUR 26'
+        'total': 'EUR 26',
+        "star_range": range(hotel_rating)
     }
     return render(request, 'myapp/base.html', context)
