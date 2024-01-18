@@ -44,6 +44,18 @@ body {
   .title {
     font-size: 25px;
   }
+
+
+  .hotel-base h5{
+    font-size: 17px;
+ }
+
+
+ .hotel-base p {
+  font-size: 15px;
+  font-weight: 400;
+ }
+  
   
   .offer-container {
     width: 100%;
