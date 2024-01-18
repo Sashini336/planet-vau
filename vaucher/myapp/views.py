@@ -43,8 +43,7 @@ def home(request):
         'child_count': child_count,
         'price': 'EUR 26',
         'additional_tax': 'Градска такса',
-        'tax': '',
-        'city_tax': 'BGN 0.8',
+        'tax': 'BGN 0.8',
         'total': 'EUR 26',
         "star_range": range((int(hotel_rating)))
     }
