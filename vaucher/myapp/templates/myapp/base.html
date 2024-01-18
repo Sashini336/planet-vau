@@ -27,20 +27,20 @@
                 <path fill="currentColor" d="M16 18a5 5 0 1 1 5-5a5.006 5.006 0 0 1-5 5m0-8a3 3 0 1 0 3 3a3.003 3.003 0 0 0-3-3"></path>
                 <path fill="currentColor" d="m16 30l-8.436-9.949a35.076 35.076 0 0 1-.348-.451A10.889 10.889 0 0 1 5 13a11 11 0 0 1 22 0a10.884 10.884 0 0 1-2.215 6.597l-.001.003s-.3.394-.345.447ZM8.813 18.395s.233.308.286.374L16 26.908l6.91-8.15c.044-.055.278-.365.279-.366A8.901 8.901 0 0 0 25 13a9 9 0 1 0-18 0a8.905 8.905 0 0 0 1.813 5.395"></path>
               </svg>
-              <span class="location-text">23200 Gytheio, Gytheio, Greece</span>
+              <span class="location-text">{{address_hotel}}</span>
             </div>            
           </div>
         </div>
         <div class="images-container">
           <div class="images">
-            <img src="https://planet-media.s3.amazonaws.com/images/861162_56090437" class="first-image" />
+            <img src={{ main_image }} class="first-image" />
             <div class="column">
-              <img src="https://planet-media.s3.amazonaws.com/images/861162_32887839" />
-              <img src="https://planet-media.s3.amazonaws.com/images/861162_22006991" />
+              <img src="{{ images.0 }}" />
+              <img src="{{ images.1 }}" />
             </div>
             <div class="column">
-              <img src="https://planet-media.s3.amazonaws.com/images/861162_11104790" />
-              <img src="https://planet-media.s3.amazonaws.com/images/861162_93451308" />
+              <img src="{{ images.2 }}" />
+              <img src="{{ images.3 }}" />
             </div>
           </div>
         </div>
@@ -48,25 +48,25 @@
         <div class="hotel-info">
           <div class="hotel-base">
             <h3>Хотелска база</h3>
-            <p>Повечето етажи са достъпни с помощта на асансьор. Към удобствата спадат съхранение на багаж и сейф. В общите части има безжичен достъп до интернет (без допълнително заплащане). Предлага се избор от различни заведения за хранене, като ресторант и кафене. Всичко това се допълва от градина. Пристигналите с автомобил могат да ползват паркинга на хотела (без допълнително заплащане). Детегледачка, трансфер и обслужване по стаите ще задоволят нуждите и на по-взискателните посетители.</p>
+            <p>{{hotel_base}}</p>
           </div>
           <div class="accommodation">
             <h3>Настаняване</h3>
-            <p>В хотелската база са на разположение стаи с климатик, централно отопление и санитарен възел. За приятната атмосфера на много от хотелските единици допринася и красивата морска гледка. Гостите могат да спят удобно на легло с кралски размер. За най-малките посетители са налице бебешки кошарки. Освен това има сейф. В кухненската ниша се намират мини-хладилник и машина за приготвяне на чай или кафе. Оборудването включва още интернет достъп, телефон, телевизор и безжичен интернет. Комфортът в стаите се допълва от домашни пантофи. В санитарните възли ежедневно са на разположение сешоар и халати за баня. Възможно е да бъдат резервирани стаи със санитарни възли, пригодени за хора в инвалидни колички.</p>
+            <p>{{accommodation}}</p>
           </div>
           <div class="entertainment">
             <h3>Спорт/Забавления</h3>
-            <p>През горещите дни от годината гостите могат да се освежат в изградените за тази цел външен и вътрешен басейн. Лятна градина и тераса правят почивката перфектна. Многообразие осигуряват различни оферти за свободното време, сред които фитнес-студио, СПА, сауна и масажни процедури.</p>
+            <p>{{entertainment}}</p>
           </div>
           <div class="food">
             <h3>Хранене</h3>
-            <p>Гостите могат да избират между закуска, обяд или вечеря.</p>
+            <p>{{food}}</p>
           </div>
         </div>
       </div>
       <div class="button-container">
           <div class="button-wrap">
-            <button class="button">BB - Закуска</button>
+            <button class="button">{{ reservertion_type }}</button>
           </div>
           <!-- <div class="tab-button-container">
             <button class="tab-button">HB - Полупансион</button>
@@ -85,36 +85,37 @@
               </div>
               <div class="room">
                 <div class="type-room">
-                  Standard Double room (shared bathroom) (full double bed)
+                {{type_room}}
                 </div>
                 <div class="price-includes">
                   <div class="price-includes-text">Цената включва:</div>
                   <div class="include">
-                    <i class="fa-solid fa-check"></i>Без такса за анулиране до
-                    02 яну 2024 23:00
+                    <i class="fa-solid fa-check"></i>{{price_includes}}
                   </div>
-                  <div class="cancellation">
-                    <i class="fa-regular fa-circle-xmark"></i>Без възможност за
-                    анулация
+                  <div class="cancellation">  
+                    <i class="fa-regular fa-circle-xmark"></i>{{cancelattion}}
                   </div>
                 </div>
                 <div class="amount-people-container">
                   <div class="icon-ppl">
-                    <i class="fa-solid fa-person fa-2xl"></i>
-                    <i class="fa-solid fa-person fa-2xl"></i>
-                    <i class="fa-solid fa-child fa-xl"></i>
-                  </div>
-                  <div class="amount-ppl">2 Възрастни + 1 дете</div>
+                    {% for icon_class in adult_icons %}
+                        <i class="{{ icon_class }}"></i>
+                    {% endfor %}
+                    {% for icon_class in child_icons %}
+                        <i class="{{ icon_class }}"></i>
+                    {% endfor %}
+                </div>
+                <div class="amount-ppl">{{ amount_people }}</div>                
                 </div>
                 <div class="price">
-                  <div class="net-price">EUR 26</div>
+                  <div class="net-price">{{price}}</div>
                   <h6 class="tax">Допълнителни такси:</h6>
-                  <p>Градска такса</p>
-                  <h6 class="tax-price">BGN 0.8</h6>
+                  <p>{{additional_tax}}</p>
+                  <h6 class="tax-price">{{tax}}</h6>
                 </div>
                 <div class="net-container">
                   <div class="net-total">Общо</div>
-                  <div class="total-price">EUR 26</div>
+                  <div class="total-price">{{total}}</div>
                 </div>
               </div>
             </div>
@@ -122,4 +123,4 @@
       </div>
     </div>
   </body>
-</html>
+</html> 
